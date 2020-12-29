@@ -1,0 +1,31 @@
+<div class="container"> 
+    <div> 
+        <h2>Modifier une Formation :</h2> 
+    </div> 
+    <form > 
+        <div class="col-sm-2 col-md-2 col-lg-2"> 
+            <label >ID Formation</label> 
+            <input readonly type="text" [(ngModel)]="currentFormation.idFormation" 
+            name="idFormation" class="form-control"> 
+        </div> 
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label >Nom Formation</label> 
+            <input type="text"[(ngModel)]= "currentFormation.nomFormation" name="nomFormation" class="form-control"> 
+        </div> 
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label >Type Formation</label> 
+            <input type="text"[(ngModel)]= "currentFormation.typeFormation" name="typeFormation" class="form-control"> 
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2"> 
+            <label >Prix Formation</label> 
+            <input type="number" [(ngModel)]= "currentFormation.prixFormation" name="prixFormation" class="form-control"> 
+        </div> 
+        <div class="col-sm-4 col-md-4 col-lg-4"> 
+            <label >Date Formation</label> 
+            <input type="date" [ngModel]="currentFormation.dateFormation | date: 'yyyy-MM-dd'"(ngModelChange)=" currentFormation.dateFormation= $event" name="dateFormation" class="form-control"> 
+        </div> 
+        <div class="mt-2"> 
+            <button type="submit" (click)="updateFormation()" class="btn btn-success">Modifer</button> 
+        </div> 
+    </form> 
+</div>

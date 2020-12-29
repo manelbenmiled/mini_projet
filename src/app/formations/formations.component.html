@@ -1,0 +1,20 @@
+<div class ="container">
+    <div class ="card shadow mb-4">
+        <div class ="card-body">
+            <table class="table table-striped">
+                <tr> <th>Id</th> <th>Nom</th> <th>Type</th> <th>Prix</th> <th>Date Formation</th> </tr> 
+                <tbody *ngFor="let formation of formations"> 
+                    <tr > 
+                        <td>{{formation.idFormation}}</td> 
+                        <td>{{formation.nomFormation}}</td>
+                        <td>{{formation.typeFormation}}</td> 
+                        <td>{{formation.prixFormation}}</td> 
+                        <td>{{formation.dateFormation | date:'dd/MM/yyyy'}}</td> 
+                        <td><a class="btn btn-success" [routerLink]="['/updateFormation',formation.idFormation]">Modifier</a></td>
+                        <td><a class="btn btn-danger" (click)="supprimerFormation(formation)">Supprimer</a></td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
